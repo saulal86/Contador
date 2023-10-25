@@ -12,10 +12,7 @@ public class PantallaOpciones extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla2);
     }
-
     public void salir(View v){
         finish();
-
     }
-
 }

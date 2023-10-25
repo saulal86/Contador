@@ -1,5 +1,6 @@
 package com.example.contador;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         contador.setText(String.valueOf(cont));
         ejecutarHilo();
     }
-
     public void sumar(View v) {
         ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         fade_in.setDuration(100);
@@ -43,29 +43,23 @@ public class MainActivity extends AppCompatActivity {
         cont = cont.add(BigInteger.valueOf(valorsuma));
         actualizarTextoContador();
     }
-
     public void multiplicador(View v) {
-        if (cont.compareTo(BigInteger.valueOf(valorMejora)) >= 0) {
-            cont = cont.subtract(BigInteger.valueOf(valorMejora));
-            valorsuma *= 2;
-            valorMejora += 20;
-            botonmultiplicador.setText("Por cada click sumas " + valorsuma + " camporrocoins");
-            actualizarTextoContador();
-        }
+        Intent i = new Intent(this, PantallaMejoras.class);   //clase para cambiar de pantalla
+        startActivity(i);
     }
-
     private String actualizarTextoContador() {
         String textoContador;
         if (cont.compareTo(BigInteger.valueOf(1000)) >= 0) {
             BigInteger mil = BigInteger.valueOf(1000);
             BigInteger cantidad = cont.divide(mil);
             textoContador = cantidad + " k";
-            if(cont.compareTo(BigInteger.valueOf(1000000))>= 0){
-                BigInteger Mill = BigInteger.valueOf(1000000);
-                BigInteger cantidad_2 = cont.divide(Mill);
-                textoContador = cantidad_2 + " Mill";
-            }
-        } else {
+        }
+        if(cont.compareTo(BigInteger.valueOf(1000000))>= 0){
+            BigInteger Mill = BigInteger.valueOf(1000000);
+            BigInteger cantidad_2 = cont.divide(Mill);
+            textoContador = cantidad_2 + " Mill";
+        }
+        else {
             textoContador = cont.toString();
         }
         contador.setText(textoContador);
@@ -90,4 +84,17 @@ public class MainActivity extends AppCompatActivity {
                 });}
         });
     }
+    public void salir(View v){
+        finish();
+    }
+    public void menuMejoras(){
+        Intent i = new Intent(this, PantallaMejoras.class);   //clase para cambiar de pantalla
+        startActivity(i);
+    }
+    public void IrMenuMejoras(View v){
+        Intent intent = new Intent(this, PantallaMejoras.class);
+        intent.putExtra("pts", contador.getText());
+        startActivity(intent);
+    }
+
 }

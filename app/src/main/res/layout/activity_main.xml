@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/fondo"
+    android:background="#FFC107"
     >
 
 
@@ -36,9 +36,9 @@
         app:srcCompat="@drawable/botonmoneda" />
 
     <LinearLayout
-        android:layout_width="322dp"
-        android:layout_height="147dp"
-        android:background="#2b85cd"
+        android:layout_width="234dp"
+        android:layout_height="123dp"
+        android:background="#1E319A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -47,32 +47,16 @@
         app:layout_constraintVertical_bias="0.844">
 
 
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="26dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Mejora"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.336"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.757" />
-
-
         <Button
             android:id="@+id/botonmultiplicador"
             android:layout_width="179dp"
             android:layout_height="69dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="10dp"
-            android:onClick="multiplicador"
-            android:backgroundTint="#FFF"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:backgroundTint="@color/white"
+            android:onClick="IrMenuMejoras"
+            android:text="Comprar mejoras"
             android:textColor="@color/black"
-            android:text="Comprar por 100 camporrocoins"
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,25 +64,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.888"
-            app:strokeColor="#000000" />
+            app:strokeColor="@color/black" />
 
-        <TextView
-            android:layout_width="207dp"
-            android:layout_height="65dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="-170dp"
-            android:layout_marginTop="-35dp"
-            android:text="Aumenta en *2 el valor del click gastando 100 camporrocoins"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.865"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.825" />
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inicio"
+        android:onClick="salir"
+        android:backgroundTint="#1E319A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

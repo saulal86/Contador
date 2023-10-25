@@ -24,10 +24,8 @@ public class PantallaInicio extends AppCompatActivity {
     public void irPantallaAutores(View v){
         Intent i = new Intent(this, PantallaAutores.class);   //clase para cambiar de pantalla
         startActivity(i);
-
     }
     public void salir(View v){
         finish();
-
     }
 }
