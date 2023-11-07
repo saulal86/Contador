@@ -1,5 +1,6 @@
 package com.example.contador;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,13 +13,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
+    List<jugador> jugadores= new ArrayList<jugador>();
     TextView contador;
     BigInteger cont = BigInteger.ZERO;
     int valorsuma = 1;
@@ -35,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         imageView2 = findViewById(R.id.imageView2);
         contador.setText(String.valueOf(cont));
         ejecutarHilo();
+        jugadores.add(new jugador("hugo", "33",R.drawable.hugin));
+
     }
     public void sumar(View v) {
         ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);

@@ -35,9 +35,4 @@ public class PantallaMejoras extends AppCompatActivity {
         }
     }
 
-    public void usarMejora(){
-        Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("mejora", );
-        startActivity(i);
-    }
 }

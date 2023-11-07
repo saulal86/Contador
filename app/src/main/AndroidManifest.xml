@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Contador"
         tools:targetApi="31">
+
         <activity
             android:name=".PantallaMejoras"
             android:exported="false" />
