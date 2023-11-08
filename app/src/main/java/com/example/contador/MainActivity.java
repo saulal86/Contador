@@ -24,7 +24,7 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<jugador> jugadores= new ArrayList<jugador>();
+
     TextView contador;
     BigInteger cont = BigInteger.ZERO;
     int valorsuma = 1;
@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         imageView2 = findViewById(R.id.imageView2);
         contador.setText(String.valueOf(cont));
         ejecutarHilo();
-        jugadores.add(new jugador("hugo", "33",R.drawable.hugin));
 
     }
     public void sumar(View v) {
@@ -102,6 +101,10 @@ public class MainActivity extends AppCompatActivity {
     public void IrMenuMejoras(View v){
         Intent intent = new Intent(this, PantallaMejoras.class);
         intent.putExtra("pts", contador.getText());
+        startActivity(intent);
+    }
+    public void irRanking(View v){
+        Intent intent = new Intent(this, recycler_view_juagdor.class);
         startActivity(intent);
     }
 
