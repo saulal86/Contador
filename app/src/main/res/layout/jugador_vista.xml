@@ -5,30 +5,25 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/imagen"
         android:layout_marginRight="20dp"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/nick"
         android:textSize="20dp"
         android:textColor="@color/black"
-        android:text="hugo"
+        android:text="nick"
         android:layout_marginRight="20dp"/>
-
     <TextView
         android:id="@+id/monedas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="33"
+        android:text="monedas"
         android:textColor="@color/black"
         android:textSize="12dp"
         tools:ignore="TextSizeCheck" />
-
-
 </LinearLayout>

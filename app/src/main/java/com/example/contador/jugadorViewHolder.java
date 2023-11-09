@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 public class jugadorViewHolder extends RecyclerView.ViewHolder {
     ImageView imagen;
     TextView nick, monedas;
-
     public jugadorViewHolder(@NonNull View itemView) {
         super(itemView);
         imagen = itemView.findViewById(R.id.imagen);

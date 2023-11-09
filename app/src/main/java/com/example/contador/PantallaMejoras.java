@@ -11,7 +11,6 @@ import android.widget.TextView;
 import java.math.BigInteger;
 
 public class PantallaMejoras extends AppCompatActivity {
-
     BigInteger cont = BigInteger.ZERO;
     int valorMejora = 100;
     int valorsuma = 1;
@@ -24,7 +23,6 @@ public class PantallaMejoras extends AppCompatActivity {
         textoContador = (TextView)findViewById(R.id.textoContador);
         Bundle param = getIntent().getExtras();
         textoContador.setText(" " + param.getString("pts"));
-
     }
     public void multiplicador(View v) {
         if (cont.compareTo(BigInteger.valueOf(valorMejora)) >= 0) {

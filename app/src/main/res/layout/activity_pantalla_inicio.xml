@@ -5,10 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PantallaInicio"
-    android:background="#8E8E8E"
+    android:background="#FFC107"
     >
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,16 +21,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
-
-
     <Button
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="152dp"
         android:layout_height="80dp"
-        android:backgroundTint="#FFFF"
+        android:backgroundTint="#1E319A"
         android:onClick="irMainActivity"
         android:text="Jugar al juego"
-        android:textColor="@color/black"
+        android:textColor="#FFB5A6A6"
         android:textSize="23dp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,16 +37,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3"
-        app:strokeColor="@color/black" />
-
+        app:strokeColor="#FFFF" />
     <Button
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="152dp"
         android:layout_height="80dp"
-        android:backgroundTint="#FFF"
+        android:backgroundTint="#1E319A"
         android:onClick="irPantallaAutores"
         android:text="INFO"
-        android:textColor="@color/black"
+        android:textColor="#FFB5A6A6"
         android:textSize="23dp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,16 +54,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        app:strokeColor="@color/black" />
-
+        app:strokeColor="#FFFF" />
     <Button
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="152dp"
         android:layout_height="80dp"
-        android:backgroundTint="#FFF"
+        android:backgroundTint="#1E319A"
         android:onClick="irPantalla2"
         android:text="Opciones"
-        android:textColor="@color/black"
+        android:textColor="#FFB5A6A6"
         android:textSize="23dp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,16 +71,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.701"
-        app:strokeColor="@color/black" />
-
+        app:strokeColor="#FFFF" />
     <Button
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="152dp"
         android:layout_height="80dp"
-        android:backgroundTint="#FFF"
+        android:backgroundTint="#1E319A"
         android:onClick="salir"
         android:text="Salir"
-        android:textColor="@color/black"
+        android:textColor="#B5A6A6"
         android:textSize="23dp"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +88,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9"
-        app:strokeColor="@color/black" />
-
-
+        app:strokeColor="#FFFF"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

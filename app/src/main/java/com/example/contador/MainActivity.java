@@ -2,6 +2,8 @@ package com.example.contador;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaParser;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -26,8 +28,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
-
-
     TextView contador;
     BigInteger cont = BigInteger.ZERO;
     int valorsuma = 1;
@@ -35,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView2;
     int valorMejora = 100;
     int incrementoAutomatico = 1;
-    private TextView texto1, texto2;
-
+    MediaPlayer sonido = new MediaPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,34 +45,15 @@ public class MainActivity extends AppCompatActivity {
         imageView2 = findViewById(R.id.imageView2);
         contador.setText(String.valueOf(cont));
         ejecutarHilo();
-
+        sonido = MediaPlayer.create(this, R.raw.sonidomoneda);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected ( MenuItem item) {
-       int id = item.getItemId();
-        if(id == R.id.Lista){
-            Intent intent = new Intent(this, recycler_view_juagdor.class);
-            startActivity(intent);
-            return true;
-       }//else {
-//            Intent intent = new Intent(this, recycler_view_juagdor.class);
-//            startActivity(intent);
-        return super.onOptionsItemSelected(item);
-    }
-
     public void sumar(View v) {
         ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         fade_in.setDuration(100);
         imageView2.startAnimation(fade_in);
         cont = cont.add(BigInteger.valueOf(valorsuma));
         actualizarTextoContador();
+        sonido.start();
     }
     public void multiplicador(View v) {
         Intent i = new Intent(this, PantallaMejoras.class);   //clase para cambiar de pantalla
@@ -86,12 +66,11 @@ public class MainActivity extends AppCompatActivity {
             BigInteger cantidad = cont.divide(mil);
             textoContador = cantidad + " k";
         }
-        if(cont.compareTo(BigInteger.valueOf(1000000))>= 0){
+        if (cont.compareTo(BigInteger.valueOf(1000000)) >= 0) {
             BigInteger Mill = BigInteger.valueOf(1000000);
             BigInteger cantidad_2 = cont.divide(Mill);
             textoContador = cantidad_2 + " Mill";
-        }
-        else {
+        } else {
             textoContador = cont.toString();
         }
         contador.setText(textoContador);
@@ -102,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
         Handler handler = new Handler(Looper.getMainLooper());
         executor.execute(() -> {
             //Background work here
-            while (true){
+            while (true) {
                 try {
-                    Thread.sleep( 1000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -113,27 +92,24 @@ public class MainActivity extends AppCompatActivity {
                 handler.post(() -> {
                     //UI Thread work here
                     contador.setText(actualizarTextoContador());
-                });}
+                });
+            }
         });
     }
-    public void salir(View v){
+    public void salir(View v) {
+
         finish();
     }
-    public void menuMejoras(){
+    public void menuMejoras() {
         Intent i = new Intent(this, PantallaMejoras.class);   //clase para cambiar de pantalla
         startActivity(i);
     }
-    public void IrMenuMejoras(View v){
+    public void IrMenuMejoras(View v) {
         Intent intent = new Intent(this, PantallaMejoras.class);
         intent.putExtra("pts", contador.getText());
         startActivity(intent);
     }
-    public void irRanking(View v){
-        Intent intent = new Intent(this, recycler_view_juagdor.class);
-        startActivity(intent);
-    }
-
-    public void irRanking(MenuItem item) {
+    public void irRanking(View v) {
         Intent intent = new Intent(this, recycler_view_juagdor.class);
         startActivity(intent);
     }
