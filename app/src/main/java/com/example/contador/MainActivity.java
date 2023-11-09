@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView2;
     int valorMejora = 100;
     int incrementoAutomatico = 1;
+    private TextView texto1, texto2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,26 @@ public class MainActivity extends AppCompatActivity {
         ejecutarHilo();
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected ( MenuItem item) {
+       int id = item.getItemId();
+        if(id == R.id.Lista){
+            Intent intent = new Intent(this, recycler_view_juagdor.class);
+            startActivity(intent);
+            return true;
+       }//else {
+//            Intent intent = new Intent(this, recycler_view_juagdor.class);
+//            startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
+
     public void sumar(View v) {
         ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         fade_in.setDuration(100);
@@ -108,4 +133,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void irRanking(MenuItem item) {
+        Intent intent = new Intent(this, recycler_view_juagdor.class);
+        startActivity(intent);
+    }
 }

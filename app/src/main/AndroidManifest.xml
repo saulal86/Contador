@@ -27,6 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".PantallaInicio"
+            android:theme="@style/AppTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

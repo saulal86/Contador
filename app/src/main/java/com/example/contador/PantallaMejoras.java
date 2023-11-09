@@ -34,5 +34,8 @@ public class PantallaMejoras extends AppCompatActivity {
             botonmultiplicador.setText("La mejora cuesta " + valorMejora + " puntos");
         }
     }
+    public void volver(View v){
+        finish();
+    }
 
 }
