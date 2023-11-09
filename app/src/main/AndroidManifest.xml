@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Contador"
         tools:targetApi="31">
-
+        <activity
+            android:name=".MyListViewActivity"
+            android:exported="false"/>
         <activity android:name=".recycler_view_juagdor"
             android:exported="false">
         </activity>

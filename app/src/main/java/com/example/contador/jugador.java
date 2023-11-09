@@ -9,7 +9,7 @@ public class jugador {
         this.monedas = monedas;
         this.imagen = imagen;
     }
-    public String getNick() {
+    public  String getNick() {
         return nick;
     }
     public void setNick(String nick) {

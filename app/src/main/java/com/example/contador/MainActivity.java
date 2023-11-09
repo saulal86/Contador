@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView2;
     int valorMejora = 100;
     int incrementoAutomatico = 1;
-    MediaPlayer sonido = new MediaPlayer();
+    MediaPlayer sonido;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

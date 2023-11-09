@@ -23,6 +23,9 @@ public class PantallaInicio extends AppCompatActivity {
             Intent intent = new Intent(this, recycler_view_juagdor.class);
             startActivity(intent);
             return true;
+        }else {
+            Intent intent = new Intent(this, MyListViewActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
