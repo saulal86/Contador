@@ -15,7 +15,7 @@ public class MyListViewActivity extends ListActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item);
+        setContentView(R.layout.listview);
         List<jugador> jugadores = Arrays.asList(
                 new jugador("hugofm_2004", "33", R.drawable.fotohugo),
                 new jugador("danimp", "33,333", R.drawable.fotodani),

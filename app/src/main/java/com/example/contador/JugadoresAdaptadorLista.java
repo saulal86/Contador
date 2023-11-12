@@ -17,6 +17,7 @@ public class JugadoresAdaptadorLista extends ArrayAdapter<jugador> {
 
     public JugadoresAdaptadorLista(@NonNull Context context, int resource, @NonNull List<jugador> objects) {
         super(context, resource, objects);
+
     }
 
     @NonNull

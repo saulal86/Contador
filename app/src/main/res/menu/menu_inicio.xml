@@ -8,5 +8,8 @@
         android:id="@+id/Ranking"
         android:title="Ranking"
         />
+    <item
+        android:id="@+id/dialog"
+        android:title="Dialog"/>
 
 </menu>

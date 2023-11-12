@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="70dp"
@@ -19,18 +18,16 @@
         android:layout_marginStart="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent">
         <TextView
+            android:id="@+id/nombreTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nombreTextView"/>
+            android:layout_height="wrap_content" />
         <TextView
+            android:id="@+id/dirTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/dirTextView"/>
-
+            android:layout_height="wrap_content" />
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

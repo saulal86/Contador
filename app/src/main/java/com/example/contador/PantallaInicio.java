@@ -23,10 +23,15 @@ public class PantallaInicio extends AppCompatActivity {
             Intent intent = new Intent(this, recycler_view_juagdor.class);
             startActivity(intent);
             return true;
-        }else {
+        }else if (id == R.id.Lista) {
             Intent intent = new Intent(this, MyListViewActivity.class);
             startActivity(intent);
-        }
+        }else if(id == R.id.dialog){
+            Intent intent = new Intent(this, dialogos.class);
+            startActivity(intent);
+            }
+
+
         return super.onOptionsItemSelected(item);
     }
     public void irMainActivity(View v){
