@@ -55,10 +55,13 @@ public class PantallaRegister extends AppCompatActivity {
                 }
             }
         });
-        public void irlogin(View v){
-            Intent i = new Intent(this, MainActivity.class);   //clase para cambiar de pantalla
-            startActivity(i);
-        }
+        botonsignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PantallaLogin.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
