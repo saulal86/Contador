@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class PantallaRegister extends AppCompatActivity {
     EditText username, password, repassword;
+    TextView forgot;
     Button botonsignin, botonsignup;
     DBHelper DB;
 
@@ -23,6 +25,7 @@ public class PantallaRegister extends AppCompatActivity {
         repassword = findViewById(R.id.repassword);
         botonsignin = findViewById(R.id.botonsignin);
         botonsignup = findViewById(R.id.botonsignup);
+        forgot = findViewById(R.id.botonforgot);
         DB = new DBHelper(this);
 
         botonsignup.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +62,14 @@ public class PantallaRegister extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PantallaLogin.class);
+                startActivity(intent);
+            }
+        });
+
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PantallaPassword.class);
                 startActivity(intent);
             }
         });

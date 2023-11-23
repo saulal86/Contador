@@ -29,6 +29,7 @@
         android:layout_below="@+id/username"
         android:layout_margin="50dp"
         android:hint="Contraseña"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.404"
@@ -43,6 +44,7 @@
         android:layout_below="@+id/password"
         android:layout_margin="50dp"
         android:hint="Repite la contraseña"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -55,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/repassword"
+        android:textSize="20dp"
         android:layout_marginTop="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/botonsignup"
         android:layout_marginTop="50dp"
+        android:textSize="20dp"
         android:text="Usuario existente! Iniciar sesion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,6 +80,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.834" />
+
+    <TextView
+        android:id="@+id/botonforgot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Contraseña olvidada"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonsignin" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
