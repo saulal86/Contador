@@ -30,8 +30,6 @@ public class PantallaInicio extends AppCompatActivity {
             Intent intent = new Intent(this, dialogos.class);
             startActivity(intent);
             }
-
-
         return super.onOptionsItemSelected(item);
     }
     public void irMainActivity(View v){
