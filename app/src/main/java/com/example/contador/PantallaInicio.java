@@ -23,9 +23,6 @@ public class PantallaInicio extends AppCompatActivity {
             Intent intent = new Intent(this, recycler_view_juagdor.class);
             startActivity(intent);
             return true;
-        }else if (id == R.id.Lista) {
-            Intent intent = new Intent(this, MyListViewActivity.class);
-            startActivity(intent);
         }else if(id == R.id.dialog){
             Intent intent = new Intent(this, dialogos.class);
             startActivity(intent);
@@ -45,6 +42,10 @@ public class PantallaInicio extends AppCompatActivity {
         startActivity(i);
     }
     public void salir(View v){
-        finish();
+        //finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

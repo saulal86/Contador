@@ -71,7 +71,7 @@ public class PantallaLogin extends AppCompatActivity {
                 if (user.equals("") || pass.equals(""))
                     Toast.makeText(PantallaLogin.this, "Por favor, rellena todos los campos", Toast.LENGTH_SHORT).show();
                 else {
-                    boolean checkuserpass = DB.checkusername(user, pass);
+                    boolean checkuserpass = DB.checkusername(user);
                     if (checkuserpass) {
                         Toast.makeText(PantallaLogin.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), PantallaInicio.class);
@@ -82,5 +82,8 @@ public class PantallaLogin extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void acabar (View v){
+        finish();
     }
 }

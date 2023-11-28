@@ -25,7 +25,6 @@ public class PantallaRegister extends AppCompatActivity {
         repassword = findViewById(R.id.repassword);
         botonsignin = findViewById(R.id.botonsignin);
         botonsignup = findViewById(R.id.botonsignup);
-        forgot = findViewById(R.id.botonforgot);
         DB = new DBHelper(this);
 
         botonsignup.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +38,7 @@ public class PantallaRegister extends AppCompatActivity {
                     Toast.makeText(PantallaRegister.this, "Porfavor rellena todos los campos", Toast.LENGTH_SHORT).show();
                 else if (user != ("") || pass != ("") || repass != ("")) {
                     if (pass.equals(repass)) {
-                        boolean checkuser = DB.checkusername(user, pass);
+                        boolean checkuser = DB.checkusername(user);
                         if (checkuser == false) {
                             boolean insert = DB.insertaData(user, pass);
                             if (insert == true) {
@@ -66,14 +65,9 @@ public class PantallaRegister extends AppCompatActivity {
             }
         });
 
-        forgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PantallaPassword.class);
-                startActivity(intent);
-            }
-        });
 
-
+    }
+    public void acabar (View v){
+    finish();
     }
 }
