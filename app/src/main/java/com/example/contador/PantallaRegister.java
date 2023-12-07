@@ -12,9 +12,8 @@ import android.widget.Toast;
 
 public class PantallaRegister extends AppCompatActivity {
     EditText username, password, repassword;
-    TextView forgot;
     Button botonsignin, botonsignup;
-    DBHelper DB;
+    DataBaseHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,7 @@ public class PantallaRegister extends AppCompatActivity {
         repassword = findViewById(R.id.repassword);
         botonsignin = findViewById(R.id.botonsignin);
         botonsignup = findViewById(R.id.botonsignup);
-        DB = new DBHelper(this);
+        DB = new DataBaseHelper(this);
 
         botonsignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +39,7 @@ public class PantallaRegister extends AppCompatActivity {
                     if (pass.equals(repass)) {
                         boolean checkuser = DB.checkusername(user);
                         if (checkuser == false) {
-                            boolean insert = DB.insertaData(user, pass);
+                            boolean insert = DB.RegistrarUsuario(user, pass);
                             if (insert == true) {
                                 Toast.makeText(PantallaRegister.this, "Registrado corectamente", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), PantallaInicio.class);
@@ -64,10 +63,10 @@ public class PantallaRegister extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
-    public void acabar (View v){
-    finish();
+
+    public void acabar(View v) {
+        finish();
     }
+
 }

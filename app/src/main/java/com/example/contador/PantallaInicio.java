@@ -6,9 +6,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 public class PantallaInicio extends AppCompatActivity {
+
+    private String logueado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        logueado = getIntent().getStringExtra("logueado");
         setContentView(R.layout.activity_pantalla_inicio);
     }
     @Override
@@ -31,6 +34,7 @@ public class PantallaInicio extends AppCompatActivity {
     }
     public void irMainActivity(View v){
         Intent i = new Intent(this, MainActivity.class);   //clase para cambiar de pantalla
+        i.putExtra("logueado", logueado);
         startActivity(i);
     }
     public void irPantalla2(View v){

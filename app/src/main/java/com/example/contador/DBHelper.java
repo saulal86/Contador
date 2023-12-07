@@ -52,7 +52,6 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         else
             return false;
-
     }
     public boolean checkusernamepassword(String username, String password) {
         SQLiteDatabase MyDB = this.getWritableDatabase();

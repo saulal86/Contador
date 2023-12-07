@@ -36,9 +36,12 @@ public class MainActivity extends AppCompatActivity {
     int valorMejora = 100;
     int incrementoAutomatico = 1;
     MediaPlayer sonido;
+    DataBaseHelper db;
+    private String logueado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = new DataBaseHelper(this);
         setContentView(R.layout.activity_main);
         contador = findViewById(R.id.textoContador);
         botonmultiplicador = findViewById(R.id.botonmultiplicador);
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         contador.setText(String.valueOf(cont));
         ejecutarHilo();
         sonido = MediaPlayer.create(this, R.raw.sonidomoneda);
+        logueado = getIntent().getStringExtra("logueado");
     }
     public void sumar(View v) {
         ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         cont = cont.add(BigInteger.valueOf(valorsuma));
         actualizarTextoContador();
         sonido.start();
+        db.ActualizarMonedas(contador, logueado);
     }
     public void multiplicador(View v) {
         Intent i = new Intent(this, PantallaMejoras.class);   //clase para cambiar de pantalla
@@ -76,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         contador.setText(textoContador);
         return textoContador;
     }
-    private void ejecutarHilo() {
+    public void ejecutarHilo() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
         executor.execute(() -> {

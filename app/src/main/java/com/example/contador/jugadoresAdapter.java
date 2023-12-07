@@ -25,7 +25,6 @@ public class jugadoresAdapter extends RecyclerView.Adapter<jugadorViewHolder> {
     public void onBindViewHolder(@NonNull jugadorViewHolder holder, int position) {
         holder.nick.setText(jugadores.get(position).getNick());
         holder.monedas.setText(jugadores.get(position).getMonedas());
-        holder.imagen.setImageResource(jugadores.get(position).getImagen());
     }
     @Override
     public int getItemCount() {

@@ -3,11 +3,9 @@ package com.example.contador;
 public class jugador {
     String nick;
     String monedas;
-    int imagen;
-    public jugador(String nick, String monedas, int imagen) {
+    public jugador(String nick, String monedas) {
         this.nick = nick;
         this.monedas = monedas;
-        this.imagen = imagen;
     }
     public  String getNick() {
         return nick;
@@ -20,11 +18,5 @@ public class jugador {
     }
     public void setMonedas(String monedas) {
         this.monedas = monedas;
-    }
-    public int getImagen() {
-        return imagen;
-    }
-    public void setImagen(int imagen) {
-        this.imagen = imagen;
     }
 }

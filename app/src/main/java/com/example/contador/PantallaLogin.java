@@ -19,7 +19,7 @@ public class PantallaLogin extends AppCompatActivity {
     EditText username, password;
     Button botonlogin;
     ToggleButton togglePasswordVisibility;  // Agregado
-    DBHelper DB;
+    DataBaseHelper DB;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class PantallaLogin extends AppCompatActivity {
         password = findViewById(R.id.password1);
         botonlogin = findViewById(R.id.botonsignin1);
         togglePasswordVisibility = findViewById(R.id.togglePasswordVisibility);  // Agregado
-        DB = new DBHelper(this);
+        DB = new DataBaseHelper(this);
 
         // Agregado para gestionar la visibilidad de la contraseña
         togglePasswordVisibility.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -75,6 +75,7 @@ public class PantallaLogin extends AppCompatActivity {
                     if (checkuserpass) {
                         Toast.makeText(PantallaLogin.this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), PantallaInicio.class);
+                        intent.putExtra("logueado", user);
                         startActivity(intent);
                     } else {
                         Toast.makeText(PantallaLogin.this, "Credenciales inválidas", Toast.LENGTH_SHORT).show();
