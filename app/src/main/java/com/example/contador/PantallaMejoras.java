@@ -16,14 +16,16 @@ public class PantallaMejoras extends AppCompatActivity {
     int valorsuma = 1;
     Button botonmultiplicador;
     TextView textoContador;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_mejoras);
-        textoContador = (TextView)findViewById(R.id.textoContador);
+        textoContador = (TextView) findViewById(R.id.textoContador);
         Bundle param = getIntent().getExtras();
         textoContador.setText(" " + param.getString("pts"));
     }
+
     public void multiplicador(View v) {
         if (cont.compareTo(BigInteger.valueOf(valorMejora)) >= 0) {
             cont = cont.subtract(BigInteger.valueOf(valorMejora));
@@ -35,5 +37,4 @@ public class PantallaMejoras extends AppCompatActivity {
     public void volver(View v){
         finish();
     }
-
 }
