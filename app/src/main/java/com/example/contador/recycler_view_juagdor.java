@@ -22,6 +22,7 @@ public class recycler_view_juagdor extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         jugadores = db.findUsers();
         rv.setAdapter(new jugadoresAdapter(getApplicationContext(), jugadores));
+        //supuestamente en este recycler viewe deberian de aparecer los usuarios registrados pero no se porque no sale
     }
     public void volverJuego(View v){
         finish();
